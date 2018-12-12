@@ -1,0 +1,87 @@
+<p>
+  pending-new works!
+</p>
+
+<table width = "500" border = "5" style = "text-align:center" align = "center">
+        
+  <tr *ngFor="let e of employee | async">
+          <div *ngIf="e.empMgrId==flagp">
+            <tr> <th>Employee ID</th>
+              <th>Employee Name</th>
+              <th>Email Id</th>
+              <th>Mobile Number</th>
+              <th>Joining Date</th>
+              <th>Department</th>
+              <th>Available Leaves</th>
+              <th>Manager ID</th> 
+              </tr><tr>
+              <td >{{e.empId}}</td>
+              <td >{{e.empName}} </td>
+              <td >{{e.empEmail}}</td>
+              <td >{{e.empMob}} </td>
+              <td >{{e.empJdate}}</td>
+              <td >{{e.empDept}} </td>
+              <td >{{e.empLbal}} </td>
+              <td >{{e.empMgrId}} </td>
+</tr>
+<table width = "500" border = "5" style = "text-align:center" align = "center">
+<th>Employee ID</th>
+<th>Leave Id</th>
+<th>Start Date</th>
+<th>End Date</th>
+<th>Number of Days</th>
+<th>Leave Type</th>
+<th>Leave Status</th>
+<th>Leave Reason</th> 
+<th>Applied Date</th>
+<th>Comments</th>
+
+              <tr *ngFor="let x of leavedetails | async" (click)="clickRow(x,e)">
+                  <ng-container *ngIf="e.empId==x.empId">
+                <td>
+                   {{x.leaId}}
+                </td>
+                <td>
+                  {{x.empId}}
+                </td>
+                <td>
+                  {{x.sdate}}
+                </td>
+                <td>
+                  {{x.edate}}
+                </td>
+                <td>
+                  {{x.ndays}}
+                </td>
+                <td>
+                  {{x.leatype}}
+                </td>
+                <td>
+                  {{x.leaSta}}
+                </td>
+                <td>
+                  {{x.leaRea}}
+                </td> 
+                <td>
+                  {{x.leaAppOn}}
+                </td> 
+                <td>
+                  {{x.leaMgrCom}}
+                </td> 
+                  </ng-container>
+              </tr>
+              </table>
+          </div>
+        </tr>
+      </table> 
+      <br/> 
+      <br/> 
+      <div align="center" *ngIf="showButton">
+        <input type="button" (click)="doApproveDeny()" value="Approve/Deny">
+        </div>
+           <div align="center" *ngIf="!showButton">
+           <input type="button" value="Approve/Deny" disabled="disabled">
+           </div>
+           <div align="center" >
+              <button align="center" (click)="cancel()">Cancel</button>
+              </div>

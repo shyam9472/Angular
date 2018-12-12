@@ -1,0 +1,52 @@
+<div *ngIf = "empMgrId == 0">
+        <b>NO MANAGER</b></div>
+<div *ngIf = "empMgrId != 0">
+  <h1>MANAGER DETAILS</h1>
+    <table border = "3">
+        <tr>
+          <th>Employee ID</th>
+          <th>Name</th>
+          <th>Email ID</th>
+          <th>Gender</th>
+          <th>Mobile Number</th>
+          <th>Date of Birth</th>
+          <th>Date of Joining</th>
+          <th>Department</th>
+          <th>Leave Balance</th>
+          <th>Manager ID</th>
+        </tr>
+        <tr>
+            <td>
+                    {{ (employee | async)?.empId }}
+            </td>
+            <td>
+                    {{ (employee | async)?.empName }}
+            </td>
+            <td>
+                    {{ (employee | async)?.empEmail }}
+            </td>
+            <td>
+                    {{ (employee | async)?.empGender }}
+            </td>
+            <td>
+                    {{ (employee | async)?.empMob }}
+            </td>
+            <td>
+                    {{ (employee | async)?.empDob }}
+            </td>
+            <td>
+                    {{ (employee | async)?.empJdate }}
+            </td>
+            <td>
+                    {{ (employee | async)?.empDept }}
+            </td>
+            <td>
+                    {{ (employee | async)?.empLbal }}
+            </td>
+            <td>
+                    {{ (employee | async)?.empMgrId }}
+            </td>
+        </tr>
+</table>
+</div>
+

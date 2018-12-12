@@ -1,0 +1,59 @@
+<p>
+  pending-leaves works!
+</p>
+<h1 style= "color:rgba(102, 125, 175, 0.884);text-align:center;"><b>PENDING LEAVES</b> </h1>
+
+<table>
+  <tr *ngFor = "let emp of employee | async">
+    <div *ngIf = "emp.empMgrId == flagp">
+      <td>
+          {{emp.empId}}
+      </td>
+      </div>
+      </tr>
+      </table>
+        <!-- <ng-container *ngFor = "let lea of leavedetails | async">
+          <th>Employee ID</th>
+          <th>Manager ID</th>
+          <th>Employee ID</th>
+          <th>Leave ID</th>
+          <th>Start Date</th>
+          <th>End Date</th>
+          <th>No. Of Days</th>
+          <th>Leave Type</th>
+          <th>Leave Status</th>
+          <th>Leave Reason</th>
+          <th>Applied Date</th>
+          </tr>
+          </div> -->
+        <!-- <tr *ngFor = "let lea of leavedetails | async">
+                <ng-container *ngIf = "lea.empId == 2000">
+  <td>
+    {{lea.empId}}
+  </td> 
+  <td>
+    {{lea.leaId}}
+  </td>  
+  <td>
+    {{lea.sdate}}
+  </td>
+  <td>
+    {{lea.edate}}
+  </td>
+  <td>
+    {{lea.ndays}}
+  </td>
+  <td>
+    {{lea.leatype}}
+  </td>
+  <td>
+    {{lea.leaSta}}
+  </td>
+  <td>
+    {{lea.leaRea}}
+  </td>
+  <td>
+    {{lea.leaAppOn}}
+  </td>
+</ng-container>
+</tr> -->
